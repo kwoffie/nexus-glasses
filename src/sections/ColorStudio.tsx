@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import GlassesIllustration from '@/components/GlassesIllustration'
+import NexusGlasses from '@/components/NexusGlasses'
+import { type ColorwayKey } from '@/components/NexusGlasses'
 import { cn } from '@/lib/utils'
 
 interface Finish {
@@ -7,13 +8,14 @@ interface Finish {
   name: string
   hex: string
   blurb: string
+  colorway: ColorwayKey
 }
 
 const FINISHES: Finish[] = [
-  { id: 'onyx', name: 'Onyx', hex: '#f59e0b', blurb: 'Matte black titanium, amber HUD' },
-  { id: 'glacier', name: 'Glacier', hex: '#3b82f6', blurb: 'Brushed silver, cobalt HUD' },
-  { id: 'moss', name: 'Moss', hex: '#10b981', blurb: 'Sage titanium, emerald HUD' },
-  { id: 'dusk', name: 'Dusk', hex: '#8b5cf6', blurb: 'Deep plum, violet HUD' },
+  { id: 'onyx', name: 'Onyx', hex: '#f59e0b', blurb: 'Matte black titanium, amber HUD', colorway: 'gold' },
+  { id: 'glacier', name: 'Glacier', hex: '#3b82f6', blurb: 'Brushed silver, cobalt HUD', colorway: 'arctic' },
+  { id: 'moss', name: 'Moss', hex: '#10b981', blurb: 'Sage titanium, emerald HUD', colorway: 'aurora' },
+  { id: 'dusk', name: 'Dusk', hex: '#8b5cf6', blurb: 'Deep plum, violet HUD', colorway: 'violet' },
 ]
 
 export default function ColorStudio() {
@@ -43,14 +45,14 @@ export default function ColorStudio() {
       <div className="relative z-10 max-w-[1100px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Live illustration */}
         <div className="relative rounded-3xl border border-white/10 bg-white/5 p-8 lg:p-10">
-          <GlassesIllustration
+          <NexusGlasses
             className="w-full h-auto transition-all duration-500 max-w-[400px] mx-auto"
-            accent={active.hex}
-            hudLabel="FINISH"
-            hudValue={active.name.toUpperCase()}
+            colorway={active.colorway}
+            hud={true}
+            autoRotate={true}
           />
           <p className="text-center text-xs font-mono text-white/60 mt-4 tracking-wide">
-            Live preview · rendered on-device
+            Live preview · rendered on-device · drag to orbit
           </p>
         </div>
 

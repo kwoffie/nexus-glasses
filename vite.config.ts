@@ -22,9 +22,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           // Three.js bundle (separate chunk for heavy 3D library)
-          three: ['three'],
-          // React Three Fiber
-          r3f: ['@react-three/fiber', '@react-three/drei'],
+          three: ['three', '@react-three/fiber', '@react-three/drei'],
           // Vendor libraries (React, Radix UI, etc.)
           vendor: ['react', 'react-dom', 'react-router-dom'],
           // UI components
