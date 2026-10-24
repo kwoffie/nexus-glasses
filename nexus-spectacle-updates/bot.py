@@ -22,7 +22,6 @@ BACKEND_DIR = PROJECT_DIR / "server"
 
 
 # Default ports
->>>>>>>
 
 FRONTEND_PORT = int(os.environ.get('FRONTEND_PORT', '5173'))
 BACKEND_PORT = int(os.environ.get('BACKEND_PORT', '5000'))

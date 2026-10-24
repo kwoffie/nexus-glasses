@@ -1,12 +1,19 @@
 import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useVideoCache } from '@/contexts/VideoCacheContext'
 
 export default function Hero() {
   const { t } = useTranslation()
+  const { preloadVideo } = useVideoCache()
   const contentRef = useRef<HTMLDivElement>(null)
   const headlineRef = useRef<HTMLHeadingElement>(null)
   const subheadRef = useRef<HTMLParagraphElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Preload background video
+  useEffect(() => {
+    preloadVideo('/videos/nexus-overview.mp4')
+  }, [preloadVideo])
 
   // Ensure background video autoplay with JavaScript fallback
   useEffect(() => {
@@ -76,6 +83,9 @@ export default function Hero() {
         playsInline
         preload="auto"
         poster="/images/other-backgrounds/hero-poster.jpg"
+        onError={() => {
+          console.log('Background video failed to load')
+        }}
       />
 
       {/* Gradient overlay for readability */}

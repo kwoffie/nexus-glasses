@@ -68,7 +68,21 @@ export default function DemoReels() {
     cardRefs.current.forEach((el) => {
       if (el) observer.observe(el)
     })
-    return () => observer.disconnect()
+
+    // Fallback: ensure content is visible after 2 seconds
+    const fallbackTimer = setTimeout(() => {
+      if (sectionRef.current) {
+        sectionRef.current.classList.add('animate-in')
+      }
+      cardRefs.current.forEach((el) => {
+        if (el) el.classList.add('animate-in')
+      })
+    }, 2000)
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(fallbackTimer)
+    }
   }, [])
 
   return (

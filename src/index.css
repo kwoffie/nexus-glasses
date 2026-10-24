@@ -136,6 +136,26 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+/* Safety net: ensure content is visible even if IntersectionObserver fails */
+@media screen {
+  /* Fallback for any element that hasn't received animate-in class */
+  [class*="fade-in"]:not(.animate-in),
+  [class*="fade-in-up"]:not(.animate-in) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Ensure section content is always visible as fallback */
+section {
+  min-height: auto;
+}
+
+/* Prevent empty gaps from collapsed sections */
+section > div {
+  min-height: 1px;
+}
+
 /* Pulse glow for interactive elements */
 @keyframes pulse-glow {
   0%, 100% {

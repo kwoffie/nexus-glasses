@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { Play, Pause, Volume2, VolumeX, Maximize, Film, SkipForward } from 'lucide-react'
+import { useVideoCache } from '@/contexts/VideoCacheContext'
 
 interface VideoPlayerProps {
   src?: string
@@ -34,6 +35,14 @@ export default function VideoPlayer({
   const [isMuted, setIsMuted] = useState(muted)
   const [progress, setProgress] = useState(0)
   const [showOverlay, setShowOverlay] = useState(true)
+  const [loadError, setLoadError] = useState(false)
+  const { preloadVideo } = useVideoCache()
+
+  useEffect(() => {
+    if (src) {
+      preloadVideo(src)
+    }
+  }, [src, preloadVideo])
 
   useEffect(() => {
     if (autoplay && src && videoRef.current) {
@@ -176,10 +185,17 @@ export default function VideoPlayer({
         onPlay={onPlay}
         onPause={onPause}
         onClick={handlePlay}
+        onError={() => {
+          setLoadError(true)
+          console.error('Video failed to load:', src)
+        }}
+        onLoadStart={() => {
+          setLoadError(false)
+        }}
       />
 
       {/* Play/Pause overlay */}
-      {showOverlay && src && (
+      {showOverlay && src && !loadError && (
         <button
           onClick={handlePlay}
           aria-label="Play video"
@@ -191,7 +207,35 @@ export default function VideoPlayer({
         </button>
       )}
 
-      {controls && src && (
+      {/* Error state */}
+      {loadError && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0b1220] gap-4">
+          <div
+            className="w-16 h-16 rounded-2xl flex items-center justify-center"
+            style={{ backgroundColor: `${accent}15` }}
+          >
+            <Film size={28} style={{ color: accent }} />
+          </div>
+          <span className="text-xs font-mono text-[#475569] tracking-wide">
+            VIDEO FAILED TO LOAD
+          </span>
+          <button
+            onClick={() => {
+              setLoadError(false)
+              const video = videoRef.current
+              if (video) {
+                video.load()
+                handlePlay()
+              }
+            }}
+            className="px-4 py-2 bg-amber-500/20 text-amber-400 rounded-lg text-sm hover:bg-amber-500/30 transition-colors"
+          >
+            Retry
+          </button>
+        </div>
+      )}
+
+      {controls && src && !loadError && (
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="w-full h-1 bg-white/10 rounded-full mb-3 cursor-pointer overflow-hidden">
             <div

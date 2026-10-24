@@ -25,7 +25,25 @@ app.use(express.json())
 
 // Serve static files from the React app build folder (for production)
 const clientBuildPath = join(__dirname, '..', 'dist')
-app.use(express.static(clientBuildPath))
+app.use(express.static(clientBuildPath, {
+  maxAge: '1y',
+  immutable: true,
+  setHeaders: (res, path) => {
+    // Cache videos for 1 year
+    if (path.match(/\.(mp4|webm|ogg)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+      res.setHeader('Accept-Ranges', 'bytes')
+    }
+    // Cache images for 1 year
+    if (path.match(/\.(jpg|jpeg|png|gif|svg|webp|ico)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+    }
+    // Cache JS/CSS for 1 year (hashed filenames)
+    if (path.match(/\.(js|css)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+    }
+  }
+}))
 
 // Initialize SQLite database
 const db = new sqlite3.Database('./nexus.db', (err) => {

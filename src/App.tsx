@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
 import Navigation from './sections/Navigation'
 import ContentProtection from './components/ContentProtection'
@@ -26,17 +26,38 @@ const FAQ = lazy(() => import('./sections/FAQ'))
 // Phase 12: Simple loading fallback for lazy sections
 function SectionLoader() {
   return (
-    <div className="py-20 flex items-center justify-center">
+    <div className="py-20 flex items-center justify-center min-h-[200px]">
       <div className="w-8 h-8 border-2 border-amber-500/30 border-t-amber-500 rounded-full animate-spin"></div>
     </div>
   )
 }
 
+// Safety net: ensure all sections are visible after a timeout
+function VisibilitySafetyNet() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Make all elements with opacity: 0 visible
+      document.querySelectorAll('[style*="opacity: 0"], [style*="opacity:0"]').forEach((el) => {
+        (el as HTMLElement).style.opacity = '1'
+        ;(el as HTMLElement).style.transform = 'none'
+      })
+      // Add animate-in class to all elements that might be stuck
+      document.querySelectorAll('section, .feature-item, .demo-reels-card, .live-fade-in, .demo-reels-fade-in').forEach((el) => {
+        el.classList.add('animate-in')
+      })
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  return null
+}
 export default function App() {
   const { t, i18n } = useTranslation()
 
   return (
     <div className="min-h-screen bg-[#030712] text-[#f8fafc] overflow-x-hidden">
+      <VisibilitySafetyNet />
       <ContentProtection />
       <Navigation />
       <main>

@@ -18,7 +18,19 @@ export default function LiveDemo() {
       { threshold: 0.15 }
     )
     if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
+
+    // Fallback: ensure content is visible after 2 seconds
+    const fallbackTimer = setTimeout(() => {
+      setInView(true)
+      if (sectionRef.current) {
+        sectionRef.current.classList.add('animate-in')
+      }
+    }, 2000)
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(fallbackTimer)
+    }
   }, [])
 
   return (
