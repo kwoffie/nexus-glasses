@@ -6,14 +6,12 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "outputDirectory": "dist",
-  "crons": [],
-  "regions": ["iad1"],
-  "routes": [
-    { "src": "/assets/(.*)", "headers": { "cache-control": "public, max-age=31536000, immutable" }, "continue": true },
-    { "src": "/videos/(.*)", "headers": { "cache-control": "public, max-age=86400" }, "continue": true },
-    { "src": "/locales/(.*)", "headers": { "cache-control": "public, max-age=86400" }, "continue": true },
-    { "src": "/simulator/(.*)", "continue": true },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/assets/(.*)", "destination": "/assets/:path*" },
+    { "source": "/videos/(.*)", "destination": "/videos/:path*" },
+    { "source": "/locales/(.*)", "destination": "/locales/:path*" },
+    { "source": "/simulator/(.*)", "destination": "/simulator/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
