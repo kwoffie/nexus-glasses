@@ -7,10 +7,6 @@
   "installCommand": "npm install",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/assets/(.*)", "destination": "/assets/:path*" },
-    { "source": "/videos/(.*)", "destination": "/videos/:path*" },
-    { "source": "/locales/(.*)", "destination": "/locales/:path*" },
-    { "source": "/simulator/(.*)", "destination": "/simulator/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
