@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import NexusGlasses from '@/components/NexusGlasses'
 import { type ColorwayKey } from '@/components/NexusGlasses'
+import ErrorBoundary from '@/components/ErrorBoundary'
 import { cn } from '@/lib/utils'
 
 interface Finish {
@@ -45,12 +46,14 @@ export default function ColorStudio() {
       <div className="relative z-10 max-w-[1100px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Live illustration */}
         <div className="relative rounded-3xl border border-white/10 bg-white/5 p-8 lg:p-10">
-          <NexusGlasses
-            className="w-full h-auto transition-all duration-500 max-w-[400px] mx-auto"
-            colorway={active.colorway}
-            hud={true}
-            autoRotate={true}
-          />
+          <ErrorBoundary componentName="NexusGlasses 3D">
+            <NexusGlasses
+              className="w-full h-auto transition-all duration-500 max-w-[400px] mx-auto"
+              colorway={active.colorway}
+              hud={true}
+              autoRotate={true}
+            />
+          </ErrorBoundary>
           <p className="text-center text-xs font-mono text-white/60 mt-4 tracking-wide">
             Live preview · rendered on-device · drag to orbit
           </p>

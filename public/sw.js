@@ -1,6 +1,6 @@
 // Service Worker for caching videos and static assets
-const CACHE_NAME = 'nexus-spectacle-v1'
-const VIDEO_CACHE_NAME = 'nexus-videos-v1'
+const CACHE_NAME = 'nexus-spectacle-v2'
+const VIDEO_CACHE_NAME = 'nexus-videos-v2'
 
 // Assets to cache on install
 const STATIC_ASSETS = [
@@ -76,6 +76,23 @@ self.addEventListener('fetch', (event) => {
             return networkResponse
           })
         })
+      })
+    )
+    return
+  }
+
+  // HTML documents: Network First, then Cache (ensures fresh deployments)
+  if (request.mode === 'navigate' || url.pathname === '/' || url.pathname.endsWith('.html')) {
+    event.respondWith(
+      fetch(request).then((networkResponse) => {
+        if (networkResponse.status === 200) {
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(request, networkResponse.clone())
+          })
+        }
+        return networkResponse
+      }).catch(() => {
+        return caches.match(request)
       })
     )
     return
