@@ -1,6 +1,6 @@
 import { useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 /* Rounded rectangle outline, centered on the origin. */
@@ -204,13 +204,13 @@ type Props = {
 export default function NexusGlasses({ className, hud = true, autoRotate = true, colorway = "midnight" }: Props) {
   const c = COLORWAYS[colorway];
   return (
-    <div className={className} style={{ width: "100%", height: "100%", minHeight: 320 }}>
+    <div className={className} style={{ width: "100%", minHeight: 320 }}>
       <Canvas camera={{ position: [0, 0.25, 7.2], fov: 32 }} dpr={[1, 2]}>
         <hemisphereLight args={["#9fdcff", "#0a1230", 0.9]} />
         <directionalLight position={[3, 4, 5]} intensity={1.1} />
         <pointLight position={[-4, 1, -3]} intensity={30} color={c.accent} />
         <pointLight position={[4, -1, -3]} intensity={30} color={c.sec} />
-        <Environment preset="city" environmentIntensity={0.35} />
+        <ambientLight intensity={0.35} />
         <group rotation={[0.12, -0.5, 0]}>
           <Glasses hud={hud} colorway={colorway} />
         </group>

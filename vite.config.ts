@@ -25,15 +25,6 @@ export default defineConfig({
           three: ['three', '@react-three/fiber', '@react-three/drei'],
           // Vendor libraries (React, Radix UI, etc.)
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          // UI components
-          ui: [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-avatar',
-            'lucide-react',
-            'class-variance-authority',
-            'clsx',
-            'tailwind-merge',
-          ],
         },
       },
     },

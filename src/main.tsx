@@ -7,15 +7,23 @@ import './index.css'
 import i18n from '@/i18n'
 import { I18nextProvider } from 'react-i18next'
 
-// Register service worker for caching
+// Unregister any existing service workers to prevent stale cache issues
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then((registration) => {
-      console.log('Service Worker registered:', registration)
-    }).catch((error) => {
-      console.log('Service Worker registration failed:', error)
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    registrations.forEach((registration) => {
+      registration.unregister()
+      console.log('Service Worker unregistered')
     })
   })
+  // Clear all caches
+  if ('caches' in window) {
+    caches.keys().then((names) => {
+      names.forEach((name) => {
+        caches.delete(name)
+        console.log('Cache deleted:', name)
+      })
+    })
+  }
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
