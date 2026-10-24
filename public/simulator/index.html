@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+<title>NEXUS Spectacle · Simulator</title>
+<meta name="theme-color" content="#030712" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- SVG filter definitions used by video/canvas filters. Not visible on its own. -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <filter id="filterSharpMild" x="-20%" y="-20%" width="140%" height="140%">
+        <feConvolveMatrix order="3" kernelMatrix="0 -0.5 0 -0.5 3 -0.5 0 -0.5 0" divisor="1" preserveAlpha="true" />
+      </filter>
+      <filter id="filterSharpStrong" x="-20%" y="-20%" width="140%" height="140%">
+        <feConvolveMatrix order="3" kernelMatrix="0 -1 0 -1 5 -1 0 -1 0" divisor="1" preserveAlpha="true" />
+      </filter>
+      <filter id="filterDaltonProtan" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          0.567 0.433 0     0 0
+          0.558 0.442 0     0 0
+          0     0.242 0.758 0 0
+          0     0     0     1 0" />
+      </filter>
+      <filter id="filterDaltonDeutan" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          0.625 0.375 0     0 0
+          0.7   0.3   0     0 0
+          0     0.3   0.7   0 0
+          0     0     0     1 0" />
+      </filter>
+      <filter id="filterDaltonTritan" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          0.95  0.05  0     0 0
+          0     0.433 0.567 0 0
+          0     0.475 0.525 0 0
+          0     0     0     1 0" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div id="app">
+
+    <!-- Permission / start gate -->
+    <div id="gate" class="gate">
+      <div class="gate-inner">
+        <div class="brand-mark">NEXUS<span>SPECTACLE</span></div>
+        <h1>Lens Simulator</h1>
+        <p>Runs your camera feed through the same vision modes NEXUS Spectacle
+          would apply in real time. Real hardware isn't required to preview
+          how each mode looks and reacts.</p>
+        <button id="startBtn" class="btn-primary">Enable Camera &amp; Start</button>
+        <p class="gate-note">Camera video is processed on-device and never leaves your browser.</p>
+        <p id="gateError" class="gate-error" hidden></p>
+      </div>
+    </div>
+
+    <!-- Main simulator view -->
+    <div id="stage" class="stage" hidden>
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="fxCanvas"></canvas>
+
+      <!-- HUD overlay -->
+      <div class="hud">
+        <div class="hud-top">
+          <div class="hud-chip">
+            <span class="dot"></span>
+            <span id="hudClock">--:--</span>
+          </div>
+          <div class="hud-chip hud-mode">
+            <span id="hudModeIcon">◎</span>
+            <span id="hudModeName">Select a mode</span>
+          </div>
+          <button id="flipBtn" class="hud-chip hud-btn" title="Switch camera">⟲ Camera</button>
+        </div>
+
+        <!-- corner brackets for AR framing feel -->
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+        <!-- mode-specific info readout -->
+        <div id="hudInfo" class="hud-info"></div>
+
+        <!-- Distance Guard / Ocular Risk panels (non-video demo panels) -->
+        <div id="panelDistance" class="panel" hidden>
+          <h3>Distance Guard <span class="tag">Screen Posture</span></h3>
+          <p>Drag to simulate how close a phone or book is being held.</p>
+          <input id="distanceSlider" type="range" min="10" max="80" value="45" />
+          <div id="distanceReadout" class="panel-readout">45 cm</div>
+        </div>
+
+        <div id="panelRisk" class="panel" hidden>
+          <h3>Ocular Risk Tracker <span class="tag">Glaucoma &amp; AMD Risk Factors</span></h3>
+          <div class="panel-row">
+            <label>Avg. daily screen time</label>
+            <input id="riskScreen" type="range" min="1" max="16" value="7" />
+            <span id="riskScreenVal">7 hrs</span>
+          </div>
+          <div class="panel-row">
+            <label>Family history of glaucoma/AMD</label>
+            <select id="riskFamily">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+          <div id="riskResult" class="panel-result"></div>
+          <p class="panel-disclaimer">This estimates a checkup cadence from the factors you enter \u2014 it does not measure eye pressure or detect disease. See an optometrist for an actual exam.</p>
+        </div>
+
+        <div class="hud-bottom">
+          <div id="modeTabs" class="mode-tabs"></div>
+          <div id="modeList" class="mode-list"></div>
+          <div class="on-off-row">
+            <span id="offLabel" class="off-label">OFF</span>
+            <button id="onOffToggle" class="switch" role="switch" aria-checked="true">
+              <span class="switch-thumb"></span>
+            </button>
+            <span id="onLabel" class="on-label">ON</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

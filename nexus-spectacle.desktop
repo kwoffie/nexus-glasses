@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NEXUS Spectacle
+Comment=Launch the NEXUS Spectacle site (backend + frontend) and open it in your browser
+Exec=konsole -e "/home/joojo/Downloads/nexus/nexus-spectacle-updates/start.sh"
+Path=/home/joojo/Downloads/nexus/nexus-spectacle-updates
+Icon=/home/joojo/Downloads/nexus/nexus-spectacle-updates/public/simulator/icons/icon-512.png
+Terminal=false
+Categories=Development;Network;
+StartupNotify=true

@@ -1,0 +1,324 @@
+{
+  "common": {
+    "search": "Search...",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu",
+    "language": "Language",
+    "trySimulator": "Try the Live Simulator",
+    "notMedicalAdvice": "NEXUS Spectacle's vision modes are wellness and comfort features. They are not a substitute for an eye exam — see an optometrist for diagnosis or a prescription.",
+    "preordersLive": "Preorders Live",
+    "shipsQ3": "Ships Q3 2026",
+    "securePreorder": "Secure Your Preorder",
+    "processing": "Processing...",
+    "preorderNow": "Preorder Now",
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "welcome": "Welcome, {name}!",
+    "loggedIn": "You're logged in and ready to preorder.",
+    "createAccountPrompt": "Create Your Account",
+    "warranty": "1-3 Year Warranty",
+    "freeShipping": "Free Shipping",
+    "thirtyDayReturns": "30-Day Returns",
+    "copyright": "© 2026 NEXUS Technologies. All rights reserved.",
+    "footerTagline": "Your Phone, Reimagined.",
+    "healthDisclaimer": "NEXUS Spectacle's vision modes are wellness and comfort features. They are not a substitute for an eye exam — see an optometrist for diagnosis or a prescription.",
+    "links": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support",
+      "press": "Press"
+    }
+  },
+  "nav": {
+    "logo": "NEXUS",
+    "features": "Features",
+    "demo": "Demo",
+    "demoReels": "Demo Reels",
+    "experience": "Experience",
+    "studio": "Studio",
+    "benefits": "Benefits",
+    "specs": "Specs",
+    "compare": "Compare",
+    "stories": "Stories",
+    "faq": "FAQ",
+    "preorder": "Preorder"
+  },
+  "hero": {
+    "headline": "NEXUS",
+    "subhead": "Your phone, reimagined for your eyes.",
+    "description": "The world's first spectacle that replaces your phone. Heart rate monitoring, AR navigation, gesture control, and an AI assistant — all in a frame lighter than your sunglasses.",
+    "cta": "Preorder NEXUS",
+    "scroll": "Scroll"
+  },
+  "features": {
+    "badge": "Next-Gen Wearable",
+    "title": "One Device. Infinite Possibilities.",
+    "description": "Explore All Features",
+    "items": [
+      {
+        "title": "Heart Rate Monitor",
+        "description": "Continuous biometric tracking with medical-grade precision. Know your heart, literally."
+      },
+      {
+        "title": "AR Navigation",
+        "description": "Directions projected directly onto your vision. Never look down at your phone again."
+      },
+      {
+        "title": "Gesture Control",
+        "description": "Swipe, tap, and pinch in mid-air. Your hands are the interface."
+      }
+    ]
+  },
+  "benefits": {
+    "badge": "Why NEXUS",
+    "title": "Built Different.",
+    "description": "Fourteen patents. One clear vision: technology that disappears into your life.",
+    "items": [
+      {
+        "title": "Privacy First",
+        "description": "All processing happens on-device. Your data never leaves your frame."
+      },
+      {
+        "title": "48-Hour Battery",
+        "description": "Lasts an entire weekend. Charge for 30 minutes, get 8 hours of use."
+      },
+      {
+        "title": "Satellite Ready",
+        "description": "Stay connected anywhere on Earth with built-in satellite connectivity."
+      },
+      {
+        "title": "Medical Grade",
+        "description": "FDA-cleared biometric sensors. Continuous health monitoring you can trust."
+      }
+    ]
+  },
+  "health": {
+    "badge": "NEXUS Vision Modes",
+    "title": "Vision Modes for Every Need",
+    "subtitle": "Nine precision-calibrated modes for correction, comfort, enhancement, and monitoring.",
+    "categories": {
+      "correction": "Correction",
+      "comfort": "Comfort & Protection",
+      "enhancement": "Enhancement",
+      "monitoring": "Monitoring"
+    },
+    "modes": [
+      { "id": "autofocus", "title": "Adaptive Autofocus", "tag": "Presbyopia · Near/Farsightedness", "description": "Liquid-lens elements refocus 60 times a second, sharpening what you're looking at." },
+      { "id": "astigmatism", "title": "Astigmatism Correction", "tag": "Astigmatism", "description": "Cylindrical correction layer dialed in during setup, cleaning up streaking and ghosting." },
+      { "id": "strain", "title": "Strain Shield", "tag": "Digital Eye Strain", "description": "Warms the HUD's color temperature as sessions run long, nudging you through the 20-20-20 rule." },
+      { "id": "tint", "title": "Photochromic Tint", "tag": "UV & Glare Protection", "description": "Lenses darken in direct sun and clear indoors in under a second, holding 100% UVA/UVB protection." },
+      { "id": "photophobia", "title": "Glare & Light Sensitivity Shield", "tag": "Photophobia · Migraine Aura", "description": "Detects sudden brightness spikes and dims instantly for eyes sensitive to light or prone to migraine aura." },
+      { "id": "color", "title": "Color Vision Assist", "tag": "Color Vision Deficiency", "description": "A real-time daltonization filter shifts hard-to-distinguish reds and greens apart." },
+      { "id": "contrast", "title": "Contrast Boost", "tag": "Cataracts · Low Vision", "description": "Edge-enhancement and dynamic contrast make outlines and text pop through haze." },
+      { "id": "night", "title": "Night Vision Boost", "tag": "Night Blindness · Low-Light", "description": "Low-light passthrough amplification brightens dim scenes in real time." },
+      { "id": "monitoring", "title": "Biometric Monitoring", "tag": "Heart Rate · Wellness", "description": "Continuous PPG heart rate tracking with medical-grade accuracy." }
+    ],
+    "toggleOff": "OFF",
+    "toggleOn": "ON",
+    "simulatedPreview": "Simulated preview · {title}",
+    "cta": "Try the Live Simulator",
+    "ctaDescription": "Runs these modes on your own camera, right in the browser — no hardware required."
+  },
+  "demo": {
+    "badge": "Interactive Experience",
+    "title": "See It In Action",
+    "description": "Experience the power of NEXUS AI processing through interactive demonstrations.",
+    "tabs": { "neural": "Neural Network", "processing": "Processing", "connected": "Connected", "video": "Watch NEXUS in Action" },
+    "videoTitle": "Watch NEXUS in Action",
+    "videoDescription": "See the full NEXUS experience in motion with real-world footage.",
+    "connectedTitle": "Always Connected",
+    "connectedDescription": "Stay connected anywhere on Earth with dual connectivity.",
+    "fiveG": "5G Ultra Wideband",
+    "satellite": "Satellite Link",
+    "connectedStatus": "CONNECTED",
+    "readyStatus": "READY",
+    "stats": [
+      { "label": "Neural Performance", "value": "8 TOPS" },
+      { "label": "Response Time", "value": "12ms" },
+      { "label": "Battery Life", "value": "48h" },
+      { "label": "Process Node", "value": "2nm" }
+    ]
+  },
+  "demoReels": {
+    "badge": "Video Showcase",
+    "title": "Demo Reels",
+    "description": "Explore NEXUS capabilities through our comprehensive video demonstrations.",
+    "videos": [
+      { "title": "NEXUS Demo Reel", "description": "Complete product showcase highlighting the revolutionary design, AI capabilities, and seamless user experience." },
+      { "title": "NEXUS Overview", "description": "Comprehensive walkthrough of all core features and capabilities in a seamless experience." },
+      { "title": "AR Navigation", "description": "Advanced augmented reality navigation with real-time spatial mapping and turn-by-turn directions." },
+      { "title": "Biometric Tracking", "description": "Continuous health monitoring with advanced biometric sensors and real-time analytics." },
+      { "title": "Gesture Control", "description": "Intuitive hand gesture interface for seamless device control without physical touch." }
+    ]
+  },
+  "showcase": {
+    "badge": "Video Showcase",
+    "title": "See It in Motion",
+    "description": "Watch real footage of NEXUS in action. Each video loops automatically.",
+    "videos": [
+      { "label": "NEXUS Overview", "description": "See how NEXUS transforms your daily life — from navigation to health tracking, all in one frame." },
+      { "label": "AR Navigation Demo", "description": "Turn-by-turn directions projected directly onto your vision. Never look down at your phone again." },
+      { "label": "Biometric Tracking", "description": "Medical-grade heart rate, SpO2, and temperature monitoring — continuous, passive, private." },
+      { "label": "Gesture Control", "description": "Swipe, tap, and pinch in mid-air. Watch how natural the NEXUS gesture interface feels." }
+    ]
+  },
+  "experience": {
+    "badge": "See the World Differently",
+    "stats": [
+      { "value": "48h", "label": "Battery Life" },
+      { "value": "6.3g", "label": "Ultra-Light Frame" },
+      { "value": "<3ms", "label": "Response Time" }
+    ],
+    "hud": { "live": "REC ● LIVE", "turnLeft": "Turn left on 5th Ave", "hr": "HR 142 BPM", "connection": "5G · SAT LOCK" }
+  },
+  "colorStudio": {
+    "badge": "Make It Yours",
+    "title": "Four Finishes.<br />One You.",
+    "description": "Every NEXUS frame ships with a swappable titanium shell and a matching HUD accent color. Pick a finish below to preview it.",
+    "livePreview": "Live preview · rendered on-device",
+    "cta": "Preorder in {name}",
+    "finishes": [
+      { "name": "Onyx", "blurb": "Matte black titanium, amber HUD" },
+      { "name": "Glacier", "blurb": "Brushed silver, cobalt HUD" },
+      { "name": "Moss", "blurb": "Sage titanium, emerald HUD" },
+      { "name": "Dusk", "blurb": "Deep plum, violet HUD" }
+    ]
+  },
+  "specs": {
+    "title": "Full Technical Specifications",
+    "categoryHeader": "Category",
+    "specHeader": "Specification",
+    "valueHeader": "Value",
+    "cards": [
+      { "title": "Micro-OLED Display", "description": "Dual 4K micro-OLED panels with 120Hz refresh rate. 5000 nits peak brightness for crystal-clear AR in any lighting." },
+      { "title": "Neural Processor", "description": "Custom N1 chip with 16-core neural engine. Dedicated AI acceleration for real-time object recognition and gesture tracking." },
+      { "title": "Biometric Sensors", "description": "PPG heart rate sensor, SpO2 monitor, and skin temperature sensor. Medical-grade accuracy, continuous monitoring." },
+      { "title": "Spatial Audio", "description": "Bone conduction transducers with directional audio beams. Private sound without earbuds." },
+      { "title": "Titanium Frame", "description": "Grade 5 titanium weighing just 6.3 grams. Flexible temple arms with memory alloy for universal fit." },
+      { "title": "All-Day Battery", "description": "48-hour mixed use, 72-hour standby. Wireless charging case provides 5 full charges on the go." }
+    ],
+    "detailed": [
+      { "category": "Display", "spec": "Panel Type", "value": "Dual 4K Micro-OLED" },
+      { "category": "Display", "spec": "Field of View", "value": "40° (Standard), 60° (Pro/Limited)" },
+      { "category": "Display", "spec": "Refresh Rate", "value": "120Hz" },
+      { "category": "Display", "spec": "Brightness", "value": "5000 nits peak" },
+      { "category": "Display", "spec": "Resolution", "value": "3840 x 2160 per eye" },
+      { "category": "Processor", "spec": "Chip", "value": "N1 Neural Engine" },
+      { "category": "Processor", "spec": "Cores", "value": "16-core neural engine" },
+      { "category": "Processor", "spec": "AI Performance", "value": "12 TOPS" },
+      { "category": "Processor", "spec": "GPU", "value": "Adreno 750 class" },
+      { "category": "Memory", "spec": "RAM", "value": "8GB LPDDR5 (Standard), 16GB (Pro), 64GB (Limited)" },
+      { "category": "Memory", "spec": "Storage", "value": "128GB / 256GB / 1TB NVMe" },
+      { "category": "Connectivity", "spec": "WiFi", "value": "Wi-Fi 7 (802.11be)" },
+      { "category": "Connectivity", "spec": "Bluetooth", "value": "5.3 LE Audio" },
+      { "category": "Connectivity", "spec": "Cellular", "value": "5G/4G LTE optional eSIM" },
+      { "category": "Connectivity", "spec": "Range", "value": "10m Wi-Fi, 50m Bluetooth" },
+      { "category": "Sensors", "spec": "Health", "value": "PPG, SpO2, Temp, HRV" },
+      { "category": "Sensors", "spec": "Motion", "value": "6-axis gyro, accelerometer" },
+      { "category": "Sensors", "spec": "Ambient", "value": "Light, proximity, pressure" },
+      { "category": "Sensors", "spec": "Camera", "value": "12MP main, 8MP depth" },
+      { "category": "Audio", "spec": "Speakers", "value": "Bone conduction transducers" },
+      { "category": "Audio", "spec": "Directional", "value": "Yes, 360° spatial audio" },
+      { "category": "Frame", "spec": "Material", "value": "Grade 5 Titanium" },
+      { "category": "Frame", "spec": "Weight", "value": "6.3 grams" },
+      { "category": "Battery", "spec": "Capacity", "value": "48h mixed use / 72h standby" },
+      { "category": "Battery", "spec": "Charging", "value": "Wireless charging case, 5 full charges" }
+    ]
+  },
+  "comparison": {
+    "badge": "Why Switch",
+    "title": "NEXUS vs. Everything Else",
+    "description": "Your phone does a lot. Old AR headsets do a little, badly. NEXUS was built to replace both.",
+    "tableHeaders": {
+      "capability": "Capability",
+      "smartphone": "Smartphone",
+      "legacyAR": "Legacy AR",
+      "nexus": "NEXUS"
+    },
+    "rows": [
+      { "label": "Hands-free navigation", "phone": "no", "oldGlasses": "partial", "nexus": "yes" },
+      { "label": "Continuous heart rate", "phone": "no", "oldGlasses": "no", "nexus": "yes" },
+      { "label": "Gesture control", "phone": "no", "oldGlasses": "partial", "nexus": "yes" },
+      { "label": "All-day battery", "phone": "18h", "oldGlasses": "3h", "nexus": "48h" },
+      { "label": "Weight", "phone": "187g", "oldGlasses": "92g", "nexus": "6.3g" },
+      { "label": "Satellite connectivity", "phone": "no", "oldGlasses": "no", "nexus": "yes" },
+      { "label": "On-device AI privacy", "phone": "partial", "oldGlasses": "no", "nexus": "yes" }
+    ]
+  },
+  "testimonials": {
+    "badge": "Early Access",
+    "title": "From the First 500 Wearers",
+    "items": [
+      { "name": "Priya Nandakumar", "role": "Trail runner", "quote": "I leave my phone in the car now. Turn-by-turn directions in my field of view and my heart rate in the corner - that's the whole run." },
+      { "name": "Marcus Ude", "role": "Field engineer", "quote": "Gesture control means I can pull up a schematic with gloves on. Small thing, but it saves me twenty trips back to the van a day." },
+      { "name": "Sofia Berg", "role": "Product designer", "quote": "The battery is the real feature. 48 hours means it disappears into my routine instead of becoming another thing to charge." }
+    ]
+  },
+  "launchCountdown": {
+    "badge": "Launch Countdown",
+    "title": "Coming <span className=\"text-amber-400\">--</span>",
+    "description": "Preorders are open. The future arrives in",
+    "units": { "days": "Days", "hours": "Hours", "minutes": "Minutes", "seconds": "Seconds" },
+    "cta": "Secure Your Preorder",
+    "preordersLive": "Preorders Live",
+    "shipsQ3": "Ships Q3 2026"
+  },
+  "liveDemo": {
+    "badge": "Interactive 3D",
+    "title": "Real Life. Real Time.",
+    "description": "Explore NEXUS from every angle. Drag to rotate, scroll to zoom.",
+    "dragToOrbit": "Drag to orbit",
+    "scrollToZoom": "Scroll to zoom",
+    "orbitControls": "Orbit Controls",
+    "realTimeRendering": "Real-time Rendering",
+    "liveHUD": "Live HUD Display",
+    "pbrMaterials": "PBR Materials"
+  },
+  "preorder": {
+    "badge": "Reserve Your NEXUS",
+    "title": "Choose Your Model",
+    "variants": [
+      {
+        "name": "NEXUS Standard",
+        "quality": "Premium Build",
+        "features": ["AR Display (40° FOV)", "Basic Gesture Control", "Health Monitoring", "128GB Storage", "Aluminum Frame", "1 Year Warranty"],
+        "specs": { "display": "40° FOV", "processor": "8-core Neural", "storage": "128GB", "frame": "Aluminum" }
+      },
+      {
+        "name": "NEXUS Pro",
+        "quality": "Professional Grade",
+        "features": ["AR Display (60° FOV)", "Advanced Gesture Control", "Full Health Suite", "256GB Storage", "Titanium Frame", "Wireless Charging Case", "2-Year Warranty"],
+        "specs": { "display": "60° FOV", "processor": "16-core Neural", "storage": "256GB", "frame": "Titanium" }
+      },
+      {
+        "name": "NEXUS Limited Edition",
+        "quality": "Ultra Premium",
+        "features": ["AR Display (60° FOV + HDR)", "Advanced Gesture Control", "Full Health Suite", "1TB Storage", "Titanium + Gold PVD Frame", "Exclusive Color Options", "Priority Support", "Lifetime Software Updates", "3-Year Warranty"],
+        "specs": { "display": "60° FOV + HDR", "processor": "16-core + AI Boost", "storage": "1TB NVMe", "frame": "Titanium + Gold PVD" }
+      }
+    ],
+    "welcome": "Welcome, {name}!",
+    "loggedIn": "You're logged in and ready to preorder.",
+    "createAccount": "Create Your Account",
+    "signIn": "Sign In",
+    "createAccountBtn": "Create Account",
+    "preorderNow": "Preorder Now",
+    "processing": "Processing...",
+    "guarantees": [
+      { "label": "1-3 Year Warranty" },
+      { "label": "Free Shipping" },
+      { "label": "30-Day Returns" }
+    ]
+  },
+  "faq": {
+    "badge": "Questions",
+    "title": "Before You Preorder",
+    "items": [
+      { "q": "Do I still need my phone?", "a": "No. NEXUS has its own eSIM, so calls, messages, navigation, and payments all work standalone. You can pair it with a phone if you want, but it isn't required." },
+      { "q": "How does the AR display work in daylight?", "a": "The micro-OLED panels hit 5,000 nits peak brightness, well above direct sunlight glare, and automatically dim indoors so the overlay never washes out or blinds you." },
+      { "q": "What happens to my health data?", "a": "Biometric processing happens entirely on-device using the N1 neural chip. Nothing leaves your frame unless you explicitly choose to sync it to the companion app." },
+      { "q": "Can I wear NEXUS with prescription lenses?", "a": "Yes. Every frame ships with a magnetic prescription-insert slot, and we support single-vision inserts up to +/-6.00 diopters at checkout." },
+      { "q": "When does it ship?", "a": "Preorders placed today are estimated to ship in Q3 2026. You'll get firmware updates over the air before your unit even arrives." }
+    ]
+  }
+}
